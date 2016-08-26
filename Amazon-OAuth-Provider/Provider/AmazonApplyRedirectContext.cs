@@ -1,12 +1,10 @@
 ﻿//  Copyright 2014 Stefan Negritoiu. See LICENSE file for more information.
 
-using System;
-using System.Collections.Generic;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Provider;
 
-namespace Owin.Security.Providers.Amazon
+namespace Owin.Security.Providers.Amazon.Provider
 {
     /// <summary>
     /// Context passed when a Challenge causes a redirect to authorize endpoint in the Amazon OAuth 2.0 middleware

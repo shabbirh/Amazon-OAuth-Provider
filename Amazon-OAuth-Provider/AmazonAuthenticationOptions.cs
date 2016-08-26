@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using Owin.Security.Providers.Amazon.Provider;
 
 namespace Owin.Security.Providers.Amazon
 {
@@ -13,7 +14,7 @@ namespace Owin.Security.Providers.Amazon
         /// <summary>
         ///     Initializes a new <see cref="AmazonAuthenticationOptions" />
         /// </summary>
-        public AmazonAuthenticationOptions() : base(Constants.DefaultAuthenticationType) 
+        public AmazonAuthenticationOptions() : base(Constants.DefaultAuthenticationType)
         {
             Caption = Constants.DefaultAuthenticationType;
             CallbackPath = new PathString("/signin-amazon");

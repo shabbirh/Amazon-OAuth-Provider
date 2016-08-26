@@ -3,7 +3,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Owin.Security.Providers.Amazon
+namespace Owin.Security.Providers.Amazon.Provider
 {
     /// <summary>
     /// Default <see cref="IAmazonAuthenticationProvider"/> implementation.
@@ -59,7 +59,7 @@ namespace Owin.Security.Providers.Amazon
         /// Called when a Challenge causes a redirect to authorize endpoint in the Amazon 2.0 middleware
         /// </summary>
         /// <param name="context">Contains redirect URI and <see cref="AuthenticationProperties"/> of the challenge </param>
-        public virtual void ApplyRedirect(AmazonApplyRedirectContext context) 
+        public virtual void ApplyRedirect(AmazonApplyRedirectContext context)
         {
             OnApplyRedirect(context);
         }

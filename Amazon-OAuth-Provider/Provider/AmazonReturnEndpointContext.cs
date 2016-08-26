@@ -4,7 +4,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Provider;
 
-namespace Owin.Security.Providers.Amazon
+namespace Owin.Security.Providers.Amazon.Provider
 {
     /// <summary>
     /// Provides context information to middleware providers.
@@ -12,7 +12,7 @@ namespace Owin.Security.Providers.Amazon
     public class AmazonReturnEndpointContext : ReturnEndpointContext
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="context">OWIN environment</param>
         /// <param name="ticket">The authentication ticket</param>

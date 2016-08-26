@@ -15,6 +15,7 @@ using Microsoft.Owin.Security.Infrastructure;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
+using Owin.Security.Providers.Amazon.Provider;
 
 namespace Owin.Security.Providers.Amazon
 {

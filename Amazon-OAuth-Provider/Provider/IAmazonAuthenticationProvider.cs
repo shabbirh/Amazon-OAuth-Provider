@@ -1,9 +1,9 @@
 ﻿//  Copyright 2014 Stefan Negritoiu. See LICENSE file for more information.
 
-using System;
 using System.Threading.Tasks;
+using Microsoft.Owin.Security;
 
-namespace Owin.Security.Providers.Amazon
+namespace Owin.Security.Providers.Amazon.Provider
 {
     /// <summary>
     /// Specifies callback methods which the <see cref="AmazonAuthenticationMiddleware"></see> invokes to enable developer control over the authentication process. />
