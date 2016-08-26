@@ -1,3 +1,10 @@
+Custom Authorization Server OAuth + JWT Token Provider
+======================================================
+
+This is a simple library that provides the framework for a custom OAuth 2.x server to be used as an OAuthProvider in ASP.NET MVC.
+
+It is designed to work with any OAuth Server, and is *based* on the work done for the Amazon-OAuth-Provider by the good folk at http://freebusy.io.
+
 Amazon-OAuth-Provider
 ======================
 
@@ -8,8 +15,4 @@ http://www.asp.net/identity can use "Login with Amazon" for user identity and si
 
 This library was originally developed for and is in use at https://freebusy.io
 
-This library is available as a NuGet package at https://www.nuget.org/packages/Owin.Security.Providers.Amazon/
 
-How to Use
-======================
-See an example of how to configure your ASP.NET web app at https://github.com/AreYouFreeBusy/AzureAD-OAuth-Provider/blob/master/AzureAD-OAuth-Demo/App_Start/Startup.Auth.cs
