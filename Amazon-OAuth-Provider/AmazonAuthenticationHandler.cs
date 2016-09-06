@@ -21,7 +21,7 @@ namespace Owin.Security.Providers.Amazon
 {
     public class AmazonAuthenticationHandler : AuthenticationHandler<AmazonAuthenticationOptions>
     {
-        // see http://login.amazon.com/documentation for docs 
+        // see http://login.amazon.com/documentation for docs
         private const string AuthorizeEndpoint = "https://www.amazon.com/ap/oa";
         private const string TokenEndpoint = "https://api.amazon.com/auth/o2/token";
         private const string UserInfoEndpoint = "https://api.amazon.com/user/profile";
@@ -52,7 +52,7 @@ namespace Owin.Security.Providers.Amazon
                     code = values[0];
                 }
                 values = query.GetValues("state");
-                if (values != null && values.Count == 1) 
+                if (values != null && values.Count == 1)
                 {
                     state = values[0];
                 }
@@ -105,19 +105,19 @@ namespace Owin.Security.Providers.Amazon
                     ClaimsIdentity.DefaultNameClaimType,
                     ClaimsIdentity.DefaultRoleClaimType);
 
-                if (!string.IsNullOrEmpty(context.Id)) 
+                if (!string.IsNullOrEmpty(context.Id))
                 {
                     context.Identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, context.Id, XmlSchemaString, Options.AuthenticationType));
                 }
-                if (!string.IsNullOrEmpty(context.Name)) 
+                if (!string.IsNullOrEmpty(context.Name))
                 {
                     context.Identity.AddClaim(new Claim(ClaimTypes.Name, context.Name, XmlSchemaString, Options.AuthenticationType));
                 }
-                if (!string.IsNullOrEmpty(context.Email)) 
+                if (!string.IsNullOrEmpty(context.Email))
                 {
                     context.Identity.AddClaim(new Claim(ClaimTypes.Email, context.Email, XmlSchemaString, Options.AuthenticationType));
                 }
-                if (!string.IsNullOrEmpty(context.PostalCode)) 
+                if (!string.IsNullOrEmpty(context.PostalCode))
                 {
                     context.Identity.AddClaim(new Claim(ClaimTypes.PostalCode, context.PostalCode, XmlSchemaString, Options.AuthenticationType));
                 }
@@ -252,20 +252,20 @@ namespace Owin.Security.Providers.Amazon
         }
 
         private static void AddQueryString(IDictionary<string, string> queryStrings, AuthenticationProperties properties,
-            string name, string defaultValue = null) 
+            string name, string defaultValue = null)
         {
             string value;
-            if (!properties.Dictionary.TryGetValue(name, out value)) 
+            if (!properties.Dictionary.TryGetValue(name, out value))
             {
                 value = defaultValue;
             }
-            else 
+            else
             {
                 // Remove the parameter from AuthenticationProperties so it won't be serialized to state parameter
                 properties.Dictionary.Remove(name);
             }
 
-            if (value == null) 
+            if (value == null)
             {
                 return;
             }
@@ -276,7 +276,7 @@ namespace Owin.Security.Providers.Amazon
         /// <summary>
         /// Based on http://tools.ietf.org/html/draft-ietf-jose-json-web-signature-08#appendix-C
         /// </summary>
-        static string base64urldecode(string arg) 
+        static string base64urldecode(string arg)
         {
             string s = arg;
             s = s.Replace('-', '+'); // 62nd char of encoding
@@ -289,12 +289,12 @@ namespace Owin.Security.Providers.Amazon
                 default: throw new System.Exception("Illegal base64url string!");
             }
 
-            try 
+            try
             {
-                System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();                
+                System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
                 return encoding.GetString(Convert.FromBase64String(s)); // Standard base64 decoder
             }
-            catch (FormatException) 
+            catch (FormatException)
             {
                 return null;
             }
